@@ -76,6 +76,10 @@ impl XivVfs {
             path = path[1..].to_string();
         }
 
+        if path.ends_with('/') && path.len() > 1 {
+            path = path[..path.len() - 1].to_string();
+        }
+
         let mut path_vfs = self.vfs.root();
         if !path.is_empty() && path != "/" {
             path_vfs = path_vfs.join(path).unwrap();

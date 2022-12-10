@@ -76,7 +76,13 @@ async fn main() -> anyhow::Result<()> {
             ironworks,
             vfs: vfs.clone(),
         }
-    }));
+    }))
+    // hardcode some bitches
+    .passive_host("lmaobox.n2.pm")
+    .passive_ports(std::ops::Range {
+        start: 21000,
+        end: 22000,
+    });
 
     println!("ftpfantasy ready to rumble");
     server.listen(address).await?;
