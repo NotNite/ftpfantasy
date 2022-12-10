@@ -1,0 +1,16 @@
+[package]
+name = "ftpfantasy"
+description = "FTP server for Final Fantasy XIV"
+authors = ["NotNite <hi@notnite.com>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.66"
+async-trait = "0.1.50"
+flate2 = "1.0.25"
+ironworks = { git = "https://github.com/ackwell/ironworks.git", features = ["sqpack"] }
+isahc = "1.7.2"
+libunftp = "0.18.7"
+tokio = { version = "1.23.0", features = ["full"] }
+vfs = "0.8.0"
